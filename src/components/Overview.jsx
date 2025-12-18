@@ -11,12 +11,12 @@ const Overview = () => {
   const [stopScroll, setStopScroll] = useState(false);
 
   const cardData = [
-    { title: "OUR INITIATIVES", image: our_initiative },
-    { title: "OUR MILESTONES", image: our_milestones },
-    { title: "SURVEY REPORTS", image: survey_reports },
-    { title: "PROJECT REPORTS", image: project_reports },
-    { title: "AUDIT REPORTS", image: audit_reports },
-    { title: "10+ YEAR'S JOURNEY", image: growth },
+    { title: "OUR INITIATIVES", image: our_initiative, link: "/initiatives" },
+    { title: "OUR MILESTONES", image: our_milestones, link: "/milestones" },
+    { title: "SURVEY REPORTS", image: survey_reports, link: "/survey-reports" },
+    { title: "PROJECT REPORTS", image: project_reports, link: "/project-reports" },
+    { title: "AUDIT REPORTS", image: audit_reports, link: "/audit-reports" },
+    { title: "10+ YEAR'S JOURNEY", image: growth, link: "/journey" },
   ];
 
   return (
@@ -75,6 +75,7 @@ const Overview = () => {
               <div
                 key={index}
                 className="group mx-5 flex flex-col items-center w-64 cursor-pointer"
+                onClick={() => window.location.href = card.link}
               >
                 {/* Card with enhanced hover effects */}
                 <div className="card-hover relative h-80 w-full overflow-hidden rounded-2xl transition-all duration-500 hover:scale-105 hover:shadow-2xl shadow-lg">
