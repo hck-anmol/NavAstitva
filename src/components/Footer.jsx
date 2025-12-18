@@ -30,8 +30,8 @@ const Footer = () => {
         { name: "Our Milestones", path: "/milestones" },
         { name: "10+ Year's Journey", path: "/" },
         { name: "Our Partners", path: "/" },
-        { name: "Survey Reports", path: "/" },
-        { name: "Project Reports", path: "/" },
+        { name: "Survey Reports", path: "/survey-reports" },
+        { name: "Project Reports", path: "/project-reports" },
         { name: "Financials Fillings", path: "/" },
     ];
 
