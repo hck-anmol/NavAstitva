@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FaFacebookF, FaLinkedinIn, FaTwitter, FaYoutube, FaPhone, FaEnvelope } from "react-icons/fa";
 import logo_light from "../assets/h (1).png";
 
@@ -26,7 +27,7 @@ const Footer = () => {
     ];
 
     const achievementLinks = [
-        { name: "Our Milestones", path: "/" },
+        { name: "Our Milestones", path: "/milestones" },
         { name: "10+ Year's Journey", path: "/" },
         { name: "Our Partners", path: "/" },
         { name: "Survey Reports", path: "/" },
@@ -195,15 +196,27 @@ const Footer = () => {
                         <ul className="space-y-3">
                             {achievementLinks.map((link, index) => (
                                 <li key={index}>
-                                    <a
-                                        href={link.path}
-                                        className="text-white/80 hover:text-yellow-400 transition-all duration-300 flex items-center gap-2 group text-sm font-medium"
-                                    >
-                                        <span className="text-yellow-400 group-hover:translate-x-1 transition-transform duration-300">
-                                            ›
-                                        </span>
-                                        {link.name}
-                                    </a>
+                                    {link.path.startsWith("/") && !link.path.startsWith("http") ? (
+                                        <Link
+                                            to={link.path}
+                                            className="text-white/80 hover:text-yellow-400 transition-all duration-300 flex items-center gap-2 group text-sm font-medium"
+                                        >
+                                            <span className="text-yellow-400 group-hover:translate-x-1 transition-transform duration-300">
+                                                ›
+                                            </span>
+                                            {link.name}
+                                        </Link>
+                                    ) : (
+                                        <a
+                                            href={link.path}
+                                            className="text-white/80 hover:text-yellow-400 transition-all duration-300 flex items-center gap-2 group text-sm font-medium"
+                                        >
+                                            <span className="text-yellow-400 group-hover:translate-x-1 transition-transform duration-300">
+                                                ›
+                                            </span>
+                                            {link.name}
+                                        </a>
+                                    )}
                                 </li>
                             ))}
                         </ul>
