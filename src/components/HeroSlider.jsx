@@ -88,8 +88,8 @@ const HeroSlider = () => {
       {/* Enhanced gradient overlay for better text contrast */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/25 to-transparent" />
 
-      {/* Content Container - Better vertical centering */}
-      <div className="absolute inset-0 flex items-center justify-start">
+      {/* Content Container - Better vertical centering with navbar spacing */}
+      <div className="absolute inset-0 flex items-center justify-start pt-20 md:pt-24">
         <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12">
           <div className="max-w-7xl mx-auto">
             {/* Glassmorphism Card with improved spacing and transitions */}

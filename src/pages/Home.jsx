@@ -7,9 +7,10 @@ import Partners from "../components/Partners";
 const Home = () => {
   return (
     <div className="w-full bg-gray-50">
-      {/* Content starts below fixed navbar */}
-      <main className="pt-28 md:pt-32">
-        <HeroSlider />
+      {/* HeroSlider overlaps with navbar */}
+      <HeroSlider />
+      {/* Other content starts below */}
+      <main>
         <Overview />
         <Testimonials />
         <Partners />
