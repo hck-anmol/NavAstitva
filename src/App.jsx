@@ -17,6 +17,7 @@ import Products from "./pages/Products";
 import Contact from "./pages/Contact";
 import DonatePage from "./pages/DonatePage";
 import Journey from "./pages/Journey";
+import CareerPage from "./pages/CareerPage";
 
 const App = () => {
   return (
@@ -37,6 +38,7 @@ const App = () => {
             <Route path="/project-reports" element={<ProjectReports />} />
             <Route path="/audit-reports" element={<AuditReports />} />
             <Route path="/career" element={<Career />} />
+            <Route path="/careerpage" element={<CareerPage />} />
             <Route path="/products" element={<Products />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/donate" element={<DonatePage />} />
