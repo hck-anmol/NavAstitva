@@ -3,6 +3,9 @@ import Navbar from './components/Navbar';
 import ShareBlock from "./components/ShareBlock";
 import HeroSlider from './components/HeroSlider';
 import Overview from './components/Overview';
+import Partners from './components/Partners';
+import Testimonials from './components/Testimonials';
+import Footer from './components/Footer';
 
 const App = () => {
     return (
@@ -11,12 +14,9 @@ const App = () => {
             <ShareBlock />
             <HeroSlider />
             <Overview/>
-            {/* Main content needs top padding so the navbar doesn't cover it initially */}
-            <main className="pt-24 px-4 min-h-screen bg-gray-50">
-              
-                {/* Add dummy content to enable scrolling */}
-                <div className="h-[150vh]"></div>
-            </main>
+            <Testimonials/>
+            <Partners/>
+            <Footer/>
         </div>
     );
 };

@@ -26,24 +26,51 @@ const slides = [
 
 const HeroSlider = () => {
   const [current, setCurrent] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrent((prev) => (prev + 1) % slides.length);
+        setIsTransitioning(false);
+      }, 300);
     }, 5000);
 
     return () => clearInterval(interval);
   }, []);
 
   const goToSlide = (index) => {
-    setCurrent(index);
+    if (index !== current) {
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrent(index);
+        setIsTransitioning(false);
+      }, 300);
+    }
+  };
+
+  const handlePrevious = () => {
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrent((current - 1 + slides.length) % slides.length);
+      setIsTransitioning(false);
+    }, 300);
+  };
+
+  const handleNext = () => {
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrent((current + 1) % slides.length);
+      setIsTransitioning(false);
+    }, 300);
   };
 
   return (
     <section className="relative w-full h-screen overflow-hidden">
-      {/* Sliding Background */}
+      {/* Sliding Background with smoother transition */}
       <div
-        className="flex h-full transition-transform duration-1000 ease-in-out"
+        className="flex h-full transition-transform duration-700 ease-out"
         style={{ transform: `translateX(-${current * 100}%)` }}
       >
         {slides.map((slide, index) => (
@@ -55,93 +82,102 @@ const HeroSlider = () => {
         ))}
       </div>
 
-      {/* Gradient Overlay for better text contrast */}
-      {/* Dark overlay on background image */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent" />
+      {/* Enhanced gradient overlay for better text contrast */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/25 to-transparent" />
 
-      {/* Content Container */}
-      <div className="absolute inset-0 flex items-center top-80">
-        <div className="w-full px-3 sm:px-4 md:px-6">
+      {/* Content Container - Better vertical centering */}
+      <div className="absolute inset-0 flex items-center justify-start">
+        <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12">
           <div className="max-w-7xl mx-auto">
-
-            {/* Glassmorphism Card */}
+            {/* Glassmorphism Card with improved spacing and transitions */}
             <div
-              className="
-          relative overflow-hidden
-          bg-white/50
-          backdrop-blur-2xl
-          border border-white/30
-          shadow-[0_20px_60px_rgba(0,0,0,0.25)]
-          px-5 py-6 sm:px-6 sm:py-7 md:px-8 md:py-9 lg:px-10 lg:py-10
-          max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl
-          transition-all duration-700
-          hover:bg-white/30 hover:backdrop-blur-3xl
-        "
+              className={`
+                relative overflow-hidden
+                bg-white/40 backdrop-blur-xl
+                border border-white/30
+                shadow-[0_8px_32px_rgba(0,0,0,0.12)]
+                px-6 py-7 sm:px-7 sm:py-8 md:px-9 md:py-10 lg:px-12 lg:py-12
+                max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl
+                transition-all duration-500 ease-out
+                hover:bg-white/45 hover:backdrop-blur-2xl hover:shadow-[0_12px_48px_rgba(0,0,0,0.18)]
+                ${isTransitioning ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}
+              `}
               style={{
-                borderRadius: "24px 32px 28px 20px",
+                borderRadius: "24px",
               }}
             >
-              {/* Glass light reflection */}
-              <span className="absolute inset-0 bg-gradient-to-br from-white/30 via-white/10 to-transparent pointer-events-none" />
+              {/* Subtle glass reflection */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent pointer-events-none" />
 
-              {/* Heading */}
-              <h1 className="relative text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900/90 leading-tight mb-3 md:mb-4">
+              {/* Heading with better line-height */}
+              <h1 className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4 md:mb-5 tracking-tight">
                 {slides[current].title}
               </h1>
 
-              {/* Description */}
-              <p className="relative text-gray-800/90 text-sm sm:text-base md:text-lg leading-relaxed mb-5 md:mb-6">
+              {/* Description with improved spacing */}
+              <p className="relative text-gray-800 text-base sm:text-lg md:text-xl leading-relaxed mb-6 md:mb-8 font-medium">
                 {slides[current].description}
               </p>
 
-              {/* CTA Button */}
+              {/* CTA Button with enhanced hover effect */}
               <div className="relative">
-                <button className="inline-flex items-center gap-2.5 bg-gray-900/90 text-white px-5 sm:px-6 md:px-7 py-2.5 md:py-3 rounded-full hover:bg-gray-900 transition-all duration-300 group shadow-lg hover:shadow-xl text-sm sm:text-base font-semibold">
+                <button className="inline-flex items-center gap-3 bg-gray-900 text-white px-7 sm:px-8 md:px-9 py-3 md:py-3.5 rounded-full hover:bg-gray-800 transition-all duration-300 group shadow-lg hover:shadow-2xl hover:scale-105 text-sm sm:text-base md:text-lg font-semibold">
                   {slides[current].cta}
-                  <span className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white text-gray-900 flex items-center justify-center group-hover:translate-x-1 transition-transform duration-300 text-base sm:text-lg">
+                  <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-gray-900 flex items-center justify-center group-hover:translate-x-1 transition-transform duration-300 text-lg sm:text-xl">
                     →
                   </span>
                 </button>
               </div>
-
             </div>
           </div>
         </div>
       </div>
 
-
-      {/* Slide Indicators - Bottom center */}
-      <div className="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 flex gap-3 z-10">
+      {/* Slide Indicators - Better positioned and styled */}
+      <div className="absolute bottom-10 md:bottom-16 left-1/2 -translate-x-1/2 flex gap-3 z-20">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`transition-all duration-300 rounded-full ${current === index
-              ? "w-8 md:w-10 h-2 md:h-2.5 bg-white"
-              : "w-2 md:w-2.5 h-2 md:h-2.5 bg-white/50 hover:bg-white/75"
-              }`}
+            className={`transition-all duration-300 rounded-full ${
+              current === index
+                ? "w-10 md:w-12 h-2.5 md:h-3 bg-white shadow-lg"
+                : "w-2.5 md:w-3 h-2.5 md:h-3 bg-white/60 hover:bg-white/90"
+            }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
 
-      {/* Navigation Arrows - Hidden on mobile, visible on larger screens */}
+      {/* Navigation Arrows - Better positioned and styled */}
       <button
-        onClick={() => setCurrent((current - 1 + slides.length) % slides.length)}
-        className="hidden md:flex absolute left-8/10 top-8/9 -translate-y-1/2 w-12 h-12 lg:w-14 lg:h-14 items-center justify-center rounded-full bg-white/20 backdrop-blur-md hover:bg-white/30 transition-all duration-300 group z-10"
+        onClick={handlePrevious}
+        className="hidden md:flex absolute left-8 lg:left-12 top-1/2 -translate-y-1/2 w-14 h-14 lg:w-16 lg:h-16 items-center justify-center rounded-full bg-white/25 backdrop-blur-md border border-white/30 hover:bg-white/35 transition-all duration-300 group z-20 shadow-lg hover:shadow-xl hover:scale-110"
         aria-label="Previous slide"
       >
-        <svg className="w-6 h-6 lg:w-7 lg:h-7 text-white group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+        <svg
+          className="w-7 h-7 lg:w-8 lg:h-8 text-white group-hover:-translate-x-1 transition-transform duration-300"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          viewBox="0 0 24 24"
+        >
           <path d="M15 19l-7-7 7-7" />
         </svg>
       </button>
 
       <button
-        onClick={() => setCurrent((current + 1) % slides.length)}
-        className="hidden md:flex absolute left-9/10 top-8/9 -translate-y-1/2 w-12 h-12 lg:w-14 lg:h-14 items-center justify-center rounded-full bg-white/20 backdrop-blur-md hover:bg-white/30 transition-all duration-300 group z-10"
+        onClick={handleNext}
+        className="hidden md:flex absolute right-8 lg:right-12 top-1/2 -translate-y-1/2 w-14 h-14 lg:w-16 lg:h-16 items-center justify-center rounded-full bg-white/25 backdrop-blur-md border border-white/30 hover:bg-white/35 transition-all duration-300 group z-20 shadow-lg hover:shadow-xl hover:scale-110"
         aria-label="Next slide"
       >
-        <svg className="w-6 h-6 lg:w-7 lg:h-7 text-white group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+        <svg
+          className="w-7 h-7 lg:w-8 lg:h-8 text-white group-hover:translate-x-1 transition-transform duration-300"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          viewBox="0 0 24 24"
+        >
           <path d="M9 5l7 7-7 7" />
         </svg>
       </button>
