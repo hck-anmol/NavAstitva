@@ -44,9 +44,9 @@ const Navbar = () => {
       <div className="fixed top-0 left-0 w-full z-50 px-3 sm:px-4 md:px-6 lg:px-8 pt-4 md:pt-5 lg:pt-6">
         <nav
           className={`mx-auto max-w-7xl
-          px-5 sm:px-6 lg:px-8 rounded-2xl lg:rounded-3xl 
-          flex items-center justify-between gap-4
-          transition-all duration-500 ease-out
+          px-4 sm:px-5 lg:px-6 rounded-2xl lg:rounded-3xl 
+          flex items-center justify-between gap-2 lg:gap-3
+          transition-all duration-500 ease-out overflow-hidden
           ${isScrolled
               ? "bg-white/95 backdrop-blur-xl shadow-xl py-3.5 lg:py-4 border border-gray-100/50"
               : "bg-pink-800 py-4 lg:py-5 shadow-lg"
@@ -62,7 +62,7 @@ const Navbar = () => {
           </a>
 
           {/* Desktop Nav Links - Improved spacing and transitions */}
-          <div className="hidden lg:flex flex-1 justify-center items-center gap-4 xl:gap-6 max-w-4xl mx-8">
+          <div className="hidden lg:flex flex-1 justify-center items-center gap-3 xl:gap-4 max-w-3xl mx-4 min-w-0">
             {navLinks.map((link, i) => {
               // Special handling for Achievements dropdown
               if (link.name === "Achievements") {
@@ -146,9 +146,9 @@ const Navbar = () => {
           </div>
 
           {/* Donate Button - Enhanced hover effect */}
-          <div className="hidden lg:block shrink-0">
+          <div className="hidden lg:block shrink-0 ml-2">
             <button
-              className={`px-7 xl:px-9 py-3 rounded-full font-semibold transition-all duration-300 text-sm xl:text-base
+              className={`px-5 xl:px-7 py-2.5 xl:py-3 rounded-full font-semibold transition-all duration-300 text-xs xl:text-sm whitespace-nowrap
               hover:scale-105 active:scale-95
               ${isScrolled
                   ? "bg-yellow-500 text-black hover:bg-yellow-600 shadow-lg hover:shadow-xl"
