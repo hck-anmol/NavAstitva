@@ -38,9 +38,9 @@ const Overview = () => {
                     }
                 }
             `}</style>
-            <div>
-              <h1 className='text-4xl font-semibold px-10 pt-5 text-pink-800'>Quick overview of NAF </h1>
-              <h1 className='text-2xl font-semibold px-10 pt-2 text-pink-800'>A journey of decade</h1>
+            <div className='pt-2 px-10'>
+              <h1 className='text-4xl font-semibold  text-pink-800'>Quick overview of NAF </h1>
+              <h1 className='text-2xl font-semibold  text-pink-800'>A journey of decade</h1>
             </div>
             <div className="overflow-hidden px-10 w-full relative max-w-6xl mx-auto mt-10" onMouseEnter={() => setStopScroll(true)} onMouseLeave={() => setStopScroll(false)}>
                 <div className="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent" />
