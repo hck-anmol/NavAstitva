@@ -4,12 +4,14 @@ const About = () => {
     const founders = [
         {
             name: "Amrita Singh",
-            description: "Amrita Singh is a dynamic and accomplished individual who is dedicated to making a positive impact on society. She is a science graduate and environmentalist who founded the Nav Astitwa Foundation (NAF) in 2012, with the goal of improving the health and hygiene of women and children.",
+            role: "Co-Founder",
+            quote: "Amrita Singh is a dynamic and accomplished individual who is dedicated to making a positive impact on society. She is a science graduate and environmentalist who founded the Nav Astitwa Foundation (NAF) in 2012, with the goal of improving the health and hygiene of women and children.",
             image: "https://via.placeholder.com/300x400?text=Amrita+Singh", // Placeholder - replace with actual image
         },
         {
             name: "Pallavi Sinha",
-            description: "Pallavi Sinha is a dynamic and experienced woman who has dedicated her life to serving society. She is a Josephite and a computer graduate from Patna Women's College. In 2012, she founded the Nav Astitwa Foundation (NAF), that works exclusively for health and hygiene programs for women and children.",
+            role: "Co-Founder",
+            quote: "Pallavi Sinha is a dynamic and experienced woman who has dedicated her life to serving society. She is a Josephite and a computer graduate from Patna Women's College. In 2012, she founded the Nav Astitwa Foundation (NAF), that works exclusively for health and hygiene programs for women and children.",
             image: "https://via.placeholder.com/300x400?text=Pallavi+Sinha", // Placeholder - replace with actual image
         },
     ];
@@ -134,13 +136,14 @@ const About = () => {
                             <h2 className="text-3xl md:text-4xl font-bold text-pink-800 mb-3">Our Founders</h2>
                             <div className="w-24 h-1.5 bg-gradient-to-r from-pink-600 to-pink-400 rounded-full mt-4 mx-auto" />
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                             {founders.map((founder, index) => (
                                 <div
                                     key={index}
-                                    className="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-pink-100 hover:border-pink-300 transition-all duration-300 hover:shadow-xl"
+                                    className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300"
                                 >
-                                    <div className="h-64 bg-gradient-to-br from-pink-100 to-pink-200 flex items-center justify-center">
+                                    {/* Image Section with Gradient Overlay */}
+                                    <div className="relative h-80 overflow-hidden">
                                         <img
                                             src={founder.image}
                                             alt={founder.name}
@@ -149,10 +152,28 @@ const About = () => {
                                                 e.target.style.display = "none";
                                             }}
                                         />
+                                        {/* Gradient Overlay - Light at top, dark at bottom */}
+                                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-gray-900" />
                                     </div>
-                                    <div className="p-6">
-                                        <h3 className="text-2xl font-bold text-pink-800 mb-3">{founder.name}</h3>
-                                        <p className="text-gray-700 leading-relaxed">{founder.description}</p>
+                                    
+                                    {/* Quote Section - Dark Background */}
+                                    <div className="bg-gray-800 text-white p-6">
+                                        <p className="text-base md:text-lg leading-relaxed mb-4">
+                                            "{founder.quote}"
+                                        </p>
+                                        
+                                        {/* Separator Line */}
+                                        <div className="w-full h-px bg-white/30 mb-4" />
+                                        
+                                        {/* Attribution */}
+                                        <div>
+                                            <p className="text-white font-semibold text-lg">
+                                                — {founder.name}
+                                            </p>
+                                            <p className="text-white/80 text-sm mt-1">
+                                                {founder.role}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             ))}

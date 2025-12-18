@@ -14,7 +14,7 @@ const Navbar = () => {
     { name: "Our Work", path: "/" },
     { name: "Support Us", path: "/" },
     { name: "Achievements", path: "/achievements" },
-    { name: "Career", path: "/careerpage" },
+    { name: "Career", path: "/career" },
     { name: "Resources", path: "/resources" },
     { name: "Gallery", path: "/gallery" },
     { name: "Contact", path: "/contact" },
@@ -41,12 +41,12 @@ const Navbar = () => {
   return (
     <>
       {/* Fixed Wrapper with proper spacing */}
-      <div className="fixed top-0 left-0 w-full z-50 px-3 sm:px-4 md:px-6 lg:px-8 pt-4 md:pt-5 lg:pt-6">
+      <div className="fixed top-0 left-0 w-full z-50 px-3 sm:px-4 md:px-6 lg:px-8 pt-4 md:pt-5 lg:pt-6 overflow-visible">
         <nav
           className={`mx-auto max-w-7xl
           px-4 sm:px-5 lg:px-6 rounded-2xl lg:rounded-3xl 
           flex items-center justify-between gap-2 lg:gap-3
-          transition-all duration-500 ease-out overflow-hidden
+          transition-all duration-500 ease-out
           ${isScrolled
               ? "bg-white/95 backdrop-blur-xl shadow-xl py-3.5 lg:py-4 border border-gray-100/50"
               : "bg-pink-800 py-4 lg:py-5 shadow-lg"
@@ -62,7 +62,7 @@ const Navbar = () => {
           </a>
 
           {/* Desktop Nav Links - Improved spacing and transitions */}
-          <div className="hidden lg:flex flex-1 justify-center items-center gap-3 xl:gap-4 max-w-3xl mx-4 min-w-0">
+          <div className="hidden lg:flex flex-1 justify-center items-center gap-3 xl:gap-4 max-w-3xl mx-4 min-w-0 relative">
             {navLinks.map((link, i) => {
               // Special handling for Achievements dropdown
               if (link.name === "Achievements") {
@@ -100,7 +100,7 @@ const Navbar = () => {
                     </button>
                     {/* Dropdown Menu */}
                     {isAchievementsOpen && (
-                      <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden z-50 animate-fade-in">
+                      <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden z-[100] animate-fade-in">
                         <Link
                           to="/milestones"
                           className="block px-6 py-3 text-pink-800 hover:bg-pink-50 transition-colors duration-200 font-medium text-sm"
