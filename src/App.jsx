@@ -12,7 +12,6 @@ import Milestones from "./pages/Milestones";
 import SurveyReports from "./pages/SurveyReports";
 import ProjectReports from "./pages/ProjectReports";
 import AuditReports from "./pages/AuditReports";
-import Career from "./pages/Career";
 import Products from "./pages/Products";
 import Contact from "./pages/Contact";
 import DonatePage from "./pages/DonatePage";
@@ -37,7 +36,6 @@ const App = () => {
             <Route path="/survey-reports" element={<SurveyReports />} />
             <Route path="/project-reports" element={<ProjectReports />} />
             <Route path="/audit-reports" element={<AuditReports />} />
-            <Route path="/career" element={<Career />} />
             <Route path="/careerpage" element={<CareerPage />} />
             <Route path="/products" element={<Products />} />
             <Route path="/contact" element={<Contact />} />

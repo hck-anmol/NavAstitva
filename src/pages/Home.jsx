@@ -3,6 +3,7 @@ import HeroSlider from "../components/HeroSlider";
 import Overview from "../components/Overview";
 import Testimonials from "../components/Testimonials";
 import Partners from "../components/Partners";
+import HomePageSections from "../components/HomePageSections";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       {/* Other content starts below */}
       <main>
         <Overview />
+        <HomePageSections/>
         <Testimonials />
         <Partners />
       </main>
