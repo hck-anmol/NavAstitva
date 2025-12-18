@@ -15,6 +15,7 @@ import AuditReports from "./pages/AuditReports";
 import Products from "./pages/Products";
 import Contact from "./pages/Contact";
 import DonatePage from "./pages/DonatePage";
+import Journey from "./pages/Journey";
 
 const App = () => {
   return (
@@ -37,7 +38,7 @@ const App = () => {
             <Route path="/products" element={<Products />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/donate" element={<DonatePage />} />
-
+            <Route path="/journey" element={<Journey />} />
           </Routes>
         </div>
 

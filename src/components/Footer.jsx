@@ -28,7 +28,7 @@ const Footer = () => {
 
     const achievementLinks = [
         { name: "Our Milestones", path: "/milestones" },
-        { name: "10+ Year's Journey", path: "/" },
+        { name: "10+ Year's Journey", path: "/journey" },
         { name: "Our Partners", path: "/" },
         { name: "Survey Reports", path: "/survey-reports" },
         { name: "Project Reports", path: "/project-reports" },
