@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isAchievementsOpen, setIsAchievementsOpen] = useState(false);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -62,27 +63,86 @@ const Navbar = () => {
 
           {/* Desktop Nav Links - Improved spacing and transitions */}
           <div className="hidden lg:flex flex-1 justify-center items-center gap-4 xl:gap-6 max-w-4xl mx-8">
-            {navLinks.map((link, i) => (
-              <a
-                key={i}
-                href={link.path}
-                className={`group font-medium whitespace-nowrap transition-all duration-300
-                text-sm xl:text-base
-                ${isScrolled
-                    ? "text-pink-800 hover:text-pink-600"
-                    : "text-white hover:text-pink-50"
-                  }`}
-              >
-                <span className="relative inline-block pb-1">
-                  {link.name}
-                  <span
-                    className={`absolute left-0 bottom-0 h-0.5 w-full scale-x-0 origin-left transition-all duration-300 ease-out
-                    ${isScrolled ? "bg-pink-700" : "bg-white"}
-                    group-hover:scale-x-100`}
-                  />
-                </span>
-              </a>
-            ))}
+            {navLinks.map((link, i) => {
+              // Special handling for Achievements dropdown
+              if (link.name === "Achievements") {
+                return (
+                  <div
+                    key={i}
+                    className="relative"
+                    onMouseEnter={() => setIsAchievementsOpen(true)}
+                    onMouseLeave={() => setIsAchievementsOpen(false)}
+                  >
+                    <button
+                      className={`group font-medium whitespace-nowrap transition-all duration-300
+                      text-sm xl:text-base flex items-center gap-1
+                      ${isScrolled
+                          ? "text-pink-800 hover:text-pink-600"
+                          : "text-white hover:text-pink-50"
+                        }`}
+                    >
+                      <span className="relative inline-block pb-1">
+                        {link.name}
+                        <span
+                          className={`absolute left-0 bottom-0 h-0.5 w-full scale-x-0 origin-left transition-all duration-300 ease-out
+                          ${isScrolled ? "bg-pink-700" : "bg-white"}
+                          group-hover:scale-x-100`}
+                        />
+                      </span>
+                      <svg
+                        className={`w-4 h-4 transition-transform duration-300 ${isAchievementsOpen ? "rotate-180" : ""}`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    {/* Dropdown Menu */}
+                    {isAchievementsOpen && (
+                      <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden z-50 animate-fade-in">
+                        <Link
+                          to="/milestones"
+                          className="block px-6 py-3 text-pink-800 hover:bg-pink-50 transition-colors duration-200 font-medium text-sm"
+                          onClick={() => setIsAchievementsOpen(false)}
+                        >
+                          Our Milestones
+                        </Link>
+                        <Link
+                          to="/journey"
+                          className="block px-6 py-3 text-pink-800 hover:bg-pink-50 transition-colors duration-200 font-medium text-sm border-t border-gray-100"
+                          onClick={() => setIsAchievementsOpen(false)}
+                        >
+                          10+ Year's Journey
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+              // Regular links
+              return (
+                <Link
+                  key={i}
+                  to={link.path}
+                  className={`group font-medium whitespace-nowrap transition-all duration-300
+                  text-sm xl:text-base
+                  ${isScrolled
+                      ? "text-pink-800 hover:text-pink-600"
+                      : "text-white hover:text-pink-50"
+                    }`}
+                >
+                  <span className="relative inline-block pb-1">
+                    {link.name}
+                    <span
+                      className={`absolute left-0 bottom-0 h-0.5 w-full scale-x-0 origin-left transition-all duration-300 ease-out
+                      ${isScrolled ? "bg-pink-700" : "bg-white"}
+                      group-hover:scale-x-100`}
+                    />
+                  </span>
+                </Link>
+              );
+            })}
           </div>
 
           {/* Donate Button - Enhanced hover effect */}
@@ -150,20 +210,73 @@ const Navbar = () => {
 
         {/* Menu Links - Staggered fade-in effect */}
         <div className="flex flex-col items-center gap-3 w-full px-6">
-          {navLinks.map((link, i) => (
-            <a
-              key={i}
-              href={link.path}
-              onClick={() => setIsMenuOpen(false)}
-              className={`text-pink-800 hover:text-pink-600 text-xl sm:text-2xl font-semibold transition-all duration-300 w-full text-center py-3 rounded-xl hover:bg-pink-50
-              ${isMenuOpen ? 'animate-fade-in' : ''}`}
-              style={{
-                animationDelay: isMenuOpen ? `${i * 50}ms` : '0ms',
-              }}
-            >
-              {link.name}
-            </a>
-          ))}
+          {navLinks.map((link, i) => {
+            // Special handling for Achievements dropdown in mobile
+            if (link.name === "Achievements") {
+              return (
+                <div key={i} className="w-full">
+                  <button
+                    onClick={() => setIsAchievementsOpen(!isAchievementsOpen)}
+                    className={`text-pink-800 hover:text-pink-600 text-xl sm:text-2xl font-semibold transition-all duration-300 w-full text-center py-3 rounded-xl hover:bg-pink-50 flex items-center justify-center gap-2
+                    ${isMenuOpen ? 'animate-fade-in' : ''}`}
+                    style={{
+                      animationDelay: isMenuOpen ? `${i * 50}ms` : '0ms',
+                    }}
+                  >
+                    {link.name}
+                    <svg
+                      className={`w-5 h-5 transition-transform duration-300 ${isAchievementsOpen ? "rotate-180" : ""}`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  {/* Mobile Dropdown */}
+                  {isAchievementsOpen && (
+                    <div className="mt-2 space-y-2 w-full">
+                      <Link
+                        to="/milestones"
+                        onClick={() => {
+                          setIsMenuOpen(false);
+                          setIsAchievementsOpen(false);
+                        }}
+                        className="block text-pink-700 hover:text-pink-600 text-lg font-medium transition-all duration-300 w-full text-center py-2 rounded-lg hover:bg-pink-50"
+                      >
+                        Our Milestones
+                      </Link>
+                      <Link
+                        to="/journey"
+                        onClick={() => {
+                          setIsMenuOpen(false);
+                          setIsAchievementsOpen(false);
+                        }}
+                        className="block text-pink-700 hover:text-pink-600 text-lg font-medium transition-all duration-300 w-full text-center py-2 rounded-lg hover:bg-pink-50"
+                      >
+                        10+ Year's Journey
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              );
+            }
+            // Regular links
+            return (
+              <Link
+                key={i}
+                to={link.path}
+                onClick={() => setIsMenuOpen(false)}
+                className={`text-pink-800 hover:text-pink-600 text-xl sm:text-2xl font-semibold transition-all duration-300 w-full text-center py-3 rounded-xl hover:bg-pink-50
+                ${isMenuOpen ? 'animate-fade-in' : ''}`}
+                style={{
+                  animationDelay: isMenuOpen ? `${i * 50}ms` : '0ms',
+                }}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Mobile Donate Button - Enhanced styling */}
