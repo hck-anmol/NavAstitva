@@ -9,18 +9,21 @@ const slides = [
     title: "BREAKING THE STIGMA",
     description: "OUR MENSTRUAL HYGIENE MANAGEMENT INITIATIVE.",
     cta: "DONATE NOW",
+    link: "/donate",
   },
   {
     image: img2,
     title: "EMPOWERING COMMUNITIES, CHANGING LIVES",
     description: "JOIN US IN MAKING A DIFFERENCE.",
     cta: "GET INVOLVED",
+    link: "/get-involved",
   },
   {
     image: img3,
     title: "TOGETHER WE CAN END HUNGER",
     description: "NAF'S SAI KI RASOI PROGRAM.",
     cta: "BECOME A VOLUNTEER",
+    link: "/become-a-volunteer",
   },
 ];
 

@@ -9,14 +9,14 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "About Us", path: "/" },
+    { name: "About Us", path: "/about" },
     { name: "Our Work", path: "/" },
     { name: "Support Us", path: "/" },
-    { name: "Achievements", path: "/" },
-    { name: "Career", path: "/" },
-    { name: "Resources", path: "/" },
-    { name: "Gallery", path: "/" },
-    { name: "Contact", path: "/" },
+    { name: "Achievements", path: "/achievements" },
+    { name: "Career", path: "/career" },
+    { name: "Resources", path: "/resources" },
+    { name: "Gallery", path: "/gallery" },
+    { name: "Contact", path: "/contact" },
   ];
 
   useEffect(() => {

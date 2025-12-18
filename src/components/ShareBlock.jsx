@@ -16,7 +16,7 @@ const ShareBlock = () => {
 
         {/* Social Icons - Enhanced hover effects */}
         <a
-          href="#"
+          href="https://www.facebook.com/navastitvafoundation"
           className="p-2.5 rounded-full hover:bg-pink-50 text-pink-700 hover:text-pink-800 transition-all duration-300 hover:scale-110 hover:shadow-md group"
           aria-label="Share on Facebook"
         >
@@ -24,7 +24,7 @@ const ShareBlock = () => {
         </a>
 
         <a
-          href="#"
+          href="https://x.com/amritas51837700?lang=en"
           className="p-2.5 rounded-full hover:bg-pink-50 text-pink-700 hover:text-pink-800 transition-all duration-300 hover:scale-110 hover:shadow-md group"
           aria-label="Share on Twitter"
         >
@@ -32,7 +32,7 @@ const ShareBlock = () => {
         </a>
 
         <a
-          href="#"
+          href="https://www.linkedin.com/company/nav-astitva-foundation/?originalSubdomain=in"
           className="p-2.5 rounded-full hover:bg-pink-50 text-pink-700 hover:text-pink-800 transition-all duration-300 hover:scale-110 hover:shadow-md group"
           aria-label="Share on LinkedIn"
         >
@@ -43,7 +43,7 @@ const ShareBlock = () => {
         <div className="w-6 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
 
         <a
-          href="#"
+          href=""
           className="p-2.5 rounded-full hover:bg-pink-50 text-pink-700 hover:text-pink-800 transition-all duration-300 hover:scale-110 hover:shadow-md group"
           aria-label="More share options"
         >
