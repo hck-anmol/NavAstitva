@@ -32,6 +32,7 @@ const Footer = () => {
         { name: "Our Partners", path: "/" },
         { name: "Survey Reports", path: "/survey-reports" },
         { name: "Project Reports", path: "/project-reports" },
+        { name: "Audit Reports", path: "/audit-reports" },
         { name: "Financials Fillings", path: "/" },
     ];
 
