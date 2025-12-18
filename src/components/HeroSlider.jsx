@@ -56,45 +56,59 @@ const HeroSlider = () => {
       </div>
 
       {/* Gradient Overlay for better text contrast */}
+      {/* Dark overlay on background image */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent" />
 
-      {/* Content Container - Aligned with navbar margins */}
+      {/* Content Container */}
       <div className="absolute inset-0 flex items-center top-80">
         <div className="w-full px-3 sm:px-4 md:px-6">
           <div className="max-w-7xl mx-auto">
-            {/* Content Box - Compact size, left-aligned */}
+
+            {/* Glassmorphism Card */}
             <div
-              className="bg-white/95 backdrop-blur-xl shadow-2xl
-              px-5 py-6 sm:px-6 sm:py-7 md:px-8 md:py-9 lg:px-10 lg:py-10
-              max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl
-              transition-all duration-700"
+              className="
+          relative overflow-hidden
+          bg-white/50
+          backdrop-blur-2xl
+          border border-white/30
+          shadow-[0_20px_60px_rgba(0,0,0,0.25)]
+          px-5 py-6 sm:px-6 sm:py-7 md:px-8 md:py-9 lg:px-10 lg:py-10
+          max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl
+          transition-all duration-700
+          hover:bg-white/30 hover:backdrop-blur-3xl
+        "
               style={{
                 borderRadius: "24px 32px 28px 20px",
               }}
             >
-              {/* Heading - Responsive text sizing */}
-              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-3 md:mb-4">
+              {/* Glass light reflection */}
+              <span className="absolute inset-0 bg-gradient-to-br from-white/30 via-white/10 to-transparent pointer-events-none" />
+
+              {/* Heading */}
+              <h1 className="relative text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900/90 leading-tight mb-3 md:mb-4">
                 {slides[current].title}
               </h1>
 
               {/* Description */}
-              <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed mb-5 md:mb-6">
+              <p className="relative text-gray-800/90 text-sm sm:text-base md:text-lg leading-relaxed mb-5 md:mb-6">
                 {slides[current].description}
               </p>
 
-              {/* CTA Button - Improved interactivity */}
-              <div>
-                <button className="inline-flex items-center gap-2.5 bg-gray-900 text-white px-5 sm:px-6 md:px-7 py-2.5 md:py-3 rounded-full hover:bg-gray-800 transition-all duration-300 group shadow-lg hover:shadow-xl text-sm sm:text-base font-semibold">
+              {/* CTA Button */}
+              <div className="relative">
+                <button className="inline-flex items-center gap-2.5 bg-gray-900/90 text-white px-5 sm:px-6 md:px-7 py-2.5 md:py-3 rounded-full hover:bg-gray-900 transition-all duration-300 group shadow-lg hover:shadow-xl text-sm sm:text-base font-semibold">
                   {slides[current].cta}
                   <span className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white text-gray-900 flex items-center justify-center group-hover:translate-x-1 transition-transform duration-300 text-base sm:text-lg">
                     →
                   </span>
                 </button>
               </div>
+
             </div>
           </div>
         </div>
       </div>
+
 
       {/* Slide Indicators - Bottom center */}
       <div className="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 flex gap-3 z-10">
@@ -102,11 +116,10 @@ const HeroSlider = () => {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`transition-all duration-300 rounded-full ${
-              current === index
-                ? "w-8 md:w-10 h-2 md:h-2.5 bg-white"
-                : "w-2 md:w-2.5 h-2 md:h-2.5 bg-white/50 hover:bg-white/75"
-            }`}
+            className={`transition-all duration-300 rounded-full ${current === index
+              ? "w-8 md:w-10 h-2 md:h-2.5 bg-white"
+              : "w-2 md:w-2.5 h-2 md:h-2.5 bg-white/50 hover:bg-white/75"
+              }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
