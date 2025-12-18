@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import logo_dark from "../assets/logo_dark.png";
 import logo_light from "../assets/h (1).png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,11 +46,10 @@ const Navbar = () => {
           px-5 sm:px-6 lg:px-8 rounded-2xl lg:rounded-3xl 
           flex items-center justify-between gap-4
           transition-all duration-500 ease-out
-          ${
-            isScrolled
+          ${isScrolled
               ? "bg-white/95 backdrop-blur-xl shadow-xl py-3.5 lg:py-4 border border-gray-100/50"
               : "bg-pink-800 py-4 lg:py-5 shadow-lg"
-          }`}
+            }`}
         >
           {/* Logo - Better scaling and transition */}
           <a href="/" className="flex items-center shrink-0 transition-transform duration-300 hover:scale-105">
@@ -68,11 +68,10 @@ const Navbar = () => {
                 href={link.path}
                 className={`group font-medium whitespace-nowrap transition-all duration-300
                 text-sm xl:text-base
-                ${
-                  isScrolled
+                ${isScrolled
                     ? "text-pink-800 hover:text-pink-600"
                     : "text-white hover:text-pink-50"
-                }`}
+                  }`}
               >
                 <span className="relative inline-block pb-1">
                   {link.name}
@@ -91,11 +90,11 @@ const Navbar = () => {
             <button
               className={`px-7 xl:px-9 py-3 rounded-full font-semibold transition-all duration-300 text-sm xl:text-base
               hover:scale-105 active:scale-95
-              ${
-                isScrolled
+              ${isScrolled
                   ? "bg-yellow-500 text-black hover:bg-yellow-600 shadow-lg hover:shadow-xl"
                   : "bg-yellow-400 text-black hover:bg-yellow-500 shadow-lg hover:shadow-xl"
-              }`}
+                }`}
+              onClick={() => window.location.href = '/donate'}
             >
               Donate
             </button>
@@ -108,9 +107,8 @@ const Navbar = () => {
             aria-label="Open menu"
           >
             <svg
-              className={`h-6 w-6 transition-colors duration-300 ${
-                isScrolled ? "text-pink-800" : "text-white"
-              }`}
+              className={`h-6 w-6 transition-colors duration-300 ${isScrolled ? "text-pink-800" : "text-white"
+                }`}
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
@@ -127,11 +125,10 @@ const Navbar = () => {
       {/* Mobile Menu Overlay - Improved animations */}
       <div
         className={`fixed inset-0 bg-gradient-to-br from-pink-50 via-white to-pink-50/50 flex flex-col items-center justify-center gap-6 font-medium transition-all duration-400 ease-out z-[60] lg:hidden
-        ${
-          isMenuOpen
+        ${isMenuOpen
             ? "translate-x-0 opacity-100 visible"
             : "translate-x-full opacity-0 invisible"
-        }`}
+          }`}
       >
         {/* Close Button - Better positioned and styled */}
         <button

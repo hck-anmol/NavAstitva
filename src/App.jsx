@@ -14,6 +14,7 @@ import ProjectReports from "./pages/ProjectReports";
 import AuditReports from "./pages/AuditReports";
 import Products from "./pages/Products";
 import Contact from "./pages/Contact";
+import DonatePage from "./pages/DonatePage";
 
 const App = () => {
   return (
@@ -35,6 +36,8 @@ const App = () => {
             <Route path="/audit-reports" element={<AuditReports />} />
             <Route path="/products" element={<Products />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/donate" element={<DonatePage />} />
+
           </Routes>
         </div>
 
