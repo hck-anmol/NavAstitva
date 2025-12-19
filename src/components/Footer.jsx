@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaLinkedinIn, FaTwitter, FaYoutube, FaPhone, FaEnvelope } from "react-icons/fa";
-import logo_light from "../assets/h (1).png";
+import logo_light from "../assets/logolightt.png";
 
 const Footer = () => {
     const aboutLinks = [
