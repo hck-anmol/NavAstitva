@@ -304,9 +304,13 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Donate Button - Enhanced styling */}
+        {/* Mobile Donate Button - Updated fix */}
         <button
           className="mt-6 bg-yellow-500 text-black px-12 py-4 rounded-full hover:bg-yellow-600 font-bold text-lg transition-all duration-300 hover:shadow-xl hover:scale-105 active:scale-95"
-          onClick={() => setIsMenuOpen(false)}
+          onClick={() => {
+            setIsMenuOpen(false); // Close the menu
+            navigate('/donate');   // Go to the donate page
+          }}
         >
           Donate
         </button>
