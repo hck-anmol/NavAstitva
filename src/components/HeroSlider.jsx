@@ -142,48 +142,64 @@ const HeroSlider = () => {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`transition-all duration-300 rounded-full ${
-              current === index
+            className={`transition-all duration-300 rounded-full ${current === index
                 ? "w-10 md:w-12 h-2.5 md:h-3 bg-white shadow-lg"
                 : "w-2.5 md:w-3 h-2.5 md:h-3 bg-white/60 hover:bg-white/90"
-            }`}
+              }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
 
       {/* Navigation Arrows - Better positioned and styled */}
-      <button
-        onClick={handlePrevious}
-        className="hidden md:flex absolute left-8 lg:left-12 top-1/2 -translate-y-1/2 w-14 h-14 lg:w-16 lg:h-16 items-center justify-center rounded-full bg-white/25 backdrop-blur-md border border-white/30 hover:bg-white/35 transition-all duration-300 group z-20 shadow-lg hover:shadow-xl hover:scale-110"
-        aria-label="Previous slide"
-      >
-        <svg
-          className="w-7 h-7 lg:w-8 lg:h-8 text-white group-hover:-translate-x-1 transition-transform duration-300"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          viewBox="0 0 24 24"
+      {/* Navigation Arrows - Glassmorphism Style */}
+      <div className="absolute bottom-10 right-8 md:right-12 flex gap-3 z-30">
+        <button
+          onClick={handlePrevious}
+          className="
+      w-12 h-16 flex items-center justify-center 
+      bg-white/20 backdrop-blur-md 
+      border border-white/30 rounded-xl
+      shadow-[0_4px_12px_rgba(0,0,0,0.1)]
+      hover:bg-white/30 hover:border-white/50 
+      transition-all duration-300 group
+    "
+          aria-label="Previous slide"
         >
-          <path d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
+          <svg
+            className="w-6 h-6 text-white group-hover:-translate-x-1 transition-transform"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="3"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
 
-      <button
-        onClick={handleNext}
-        className="hidden md:flex absolute right-8 lg:right-12 top-1/2 -translate-y-1/2 w-14 h-14 lg:w-16 lg:h-16 items-center justify-center rounded-full bg-white/25 backdrop-blur-md border border-white/30 hover:bg-white/35 transition-all duration-300 group z-20 shadow-lg hover:shadow-xl hover:scale-110"
-        aria-label="Next slide"
-      >
-        <svg
-          className="w-7 h-7 lg:w-8 lg:h-8 text-white group-hover:translate-x-1 transition-transform duration-300"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          viewBox="0 0 24 24"
+        <button
+          onClick={handleNext}
+          className="
+      w-12 h-16 flex items-center justify-center 
+      bg-white/20 backdrop-blur-md 
+      border border-white/30 rounded-xl
+      shadow-[0_4px_12px_rgba(0,0,0,0.1)]
+      hover:bg-white/30 hover:border-white/50 
+      transition-all duration-300 group
+    "
+          aria-label="Next slide"
         >
-          <path d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
+          <svg
+            className="w-6 h-6 text-white group-hover:translate-x-1 transition-transform"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="3"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>  
     </section>
   );
 };

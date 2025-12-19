@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import logo_dark from "../assets/logo_dark.png";
-import logo_light from "../assets/h (1).png";
+import logodark from "../assets/logodark.png";
+import logolightt from "../assets/logolightt.png";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -16,7 +16,7 @@ const Navbar = () => {
     { name: "Achievements", path: "/achievements" },
     { name: "Career", path: "/careerpage" },
     { name: "Resources", path: "/resources" },
-    { name: "Gallery", path: "/gallery" },
+    { name: "Gallery", path: "/imagegallery" },
     { name: "Contact", path: "/contact" },
   ];
 
@@ -55,7 +55,7 @@ const Navbar = () => {
           {/* Logo - Better scaling and transition */}
           <a href="/" className="flex items-center shrink-0 transition-transform duration-300 hover:scale-105">
             <img
-              src={isScrolled ? logo_dark : logo_light}
+              src={isScrolled ? logodark : logolightt}
               alt="Logo"
               className="h-9 sm:h-10 md:h-11 lg:h-14 w-auto object-contain transition-all duration-500"
             />

@@ -17,6 +17,7 @@ import Contact from "./pages/Contact";
 import DonatePage from "./pages/DonatePage";
 import Journey from "./pages/Journey";
 import CareerPage from "./pages/CareerPage";
+import ImageGallery from "./pages/ImageGallery";
 
 const App = () => {
   return (
@@ -41,6 +42,7 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/donate" element={<DonatePage />} />
             <Route path="/journey" element={<Journey />} />
+            <Route path="/imagegallery" element={<ImageGallery />} />
           </Routes>
         </div>
 
