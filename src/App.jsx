@@ -18,6 +18,7 @@ import DonatePage from "./pages/DonatePage";
 import Journey from "./pages/Journey";
 import CareerPage from "./pages/CareerPage";
 import ImageGallery from "./pages/ImageGallery";
+import ScrollToTop from './components/ScrollToTop';
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
 
         {/* Routed content */}
         <div className="flex-1">
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

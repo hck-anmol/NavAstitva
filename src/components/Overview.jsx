@@ -6,9 +6,11 @@ import survey_reports from "../assets/survey_reports.png";
 import project_reports from "../assets/h.png";
 import audit_reports from "../assets/audit_reports.png";
 import growth from "../assets/growth.png";
+import { useNavigate } from 'react-router-dom';
 
 const Overview = () => {
   const [stopScroll, setStopScroll] = useState(false);
+  const navigate = useNavigate();
 
   const cardData = [
     { title: "OUR INITIATIVES", image: our_initiative, link: "/initiatives" },
@@ -75,7 +77,7 @@ const Overview = () => {
               <div
                 key={index}
                 className="group mx-5 flex flex-col items-center w-64 cursor-pointer"
-                onClick={() => window.location.href = card.link}
+                onClick={() => navigate(card.link) && window.scrollTo(0, 0)}
               >
                 {/* Card with enhanced hover effects */}
                 <div className="card-hover relative h-80 w-full overflow-hidden rounded-2xl transition-all duration-500 hover:scale-105 hover:shadow-2xl shadow-lg">
@@ -100,9 +102,9 @@ const Overview = () => {
                   <div className="absolute inset-0 border-2 border-transparent group-hover:border-pink-400/50 rounded-2xl transition-colors duration-500" />
                 </div>
 
-               
+
               </div>
-            ))}
+            ))}   
           </div>
         </div>
 

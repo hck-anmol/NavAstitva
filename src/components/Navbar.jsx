@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import logodark from "../assets/logodark.png";
 import logolightt from "../assets/logolightt.png";
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -170,12 +172,12 @@ const Navbar = () => {
           <div className="hidden lg:block shrink-0 ml-2">
             <button
               className={`px-5 xl:px-7 py-2.5 xl:py-3 rounded-full font-semibold transition-all duration-300 text-xs xl:text-sm whitespace-nowrap
-              hover:scale-105 active:scale-95
+              hover:scale-105 active:scale-95 hover:cursor-pointer
               ${isScrolled
                   ? "bg-yellow-500 text-black hover:bg-yellow-600 shadow-lg hover:shadow-xl"
                   : "bg-yellow-400 text-black hover:bg-yellow-500 shadow-lg hover:shadow-xl"
                 }`}
-              onClick={() => window.location.href = '/donate'}
+              onClick={() => navigate('/donate')}
             >
               Donate
             </button>
