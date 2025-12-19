@@ -7,6 +7,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAchievementsOpen, setIsAchievementsOpen] = useState(false);
+  const [achievementsTimeout, setAchievementsTimeout] = useState(null);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -37,6 +38,15 @@ const Navbar = () => {
       document.body.style.overflow = "unset";
     };
   }, [isMenuOpen]);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (achievementsTimeout) {
+        clearTimeout(achievementsTimeout);
+      }
+    };
+  }, [achievementsTimeout]);
 
   return (
     <>
@@ -70,8 +80,19 @@ const Navbar = () => {
                   <div
                     key={i}
                     className="relative"
-                    onMouseEnter={() => setIsAchievementsOpen(true)}
-                    onMouseLeave={() => setIsAchievementsOpen(false)}
+                    onMouseEnter={() => {
+                      if (achievementsTimeout) {
+                        clearTimeout(achievementsTimeout);
+                        setAchievementsTimeout(null);
+                      }
+                      setIsAchievementsOpen(true);
+                    }}
+                    onMouseLeave={() => {
+                      const timeout = setTimeout(() => {
+                        setIsAchievementsOpen(false);
+                      }, 200); // 200ms delay
+                      setAchievementsTimeout(timeout);
+                    }}
                   >
                     <button
                       className={`group font-medium whitespace-nowrap transition-all duration-300
