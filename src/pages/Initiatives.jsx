@@ -102,7 +102,7 @@ const Initiatives = () => {
                                         Read More
                                         <span className="ml-1">&#8594;</span>
                                     </a>
-                                </div>
+                            </div>
                             </article>
                         ))}
                     </div>

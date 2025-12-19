@@ -1,4 +1,19 @@
 import React from "react";
+import amritaSingh from "../assets/about/amrita-singh.webp";
+import pallaviSinha from "../assets/about/pallavi-sinha.webp";
+import ujjawalKumar from "../assets/about/ujjawal.webp";
+import veenaManvi from "../assets/about/veena.webp";
+import amanKumar from "../assets/about/aman-kumar.webp";
+import ranjanMistry from "../assets/about/ranjan-mistry.webp";
+import drBindaSingh from "../assets/about/binda-singh.webp";
+import drSaurabhSingh from "../assets/about/saurabh-singh.webp";
+import gopalKumar from "../assets/about/gopal-kumar.webp";
+import jyotiKumari from "../assets/about/jyoti-kumari.webp";
+import mdAmmanullah from "../assets/about/md-ammanullah.webp";
+import nituKumari from "../assets/about/nitu-kumari.webp";
+import shantanuSingh from "../assets/about/shantanu-singh.webp";
+import shobhaGupta from "../assets/about/shobha-gupta.webp";
+import shreeprakashThakur from "../assets/about/shreeprakash-thakur.webp";
 
 const About = () => {
     const founders = [
@@ -6,30 +21,30 @@ const About = () => {
             name: "Amrita Singh",
             role: "Co-Founder",
             quote: "Amrita Singh is a dynamic and accomplished individual who is dedicated to making a positive impact on society. She is a science graduate and environmentalist who founded the Nav Astitwa Foundation (NAF) in 2012, with the goal of improving the health and hygiene of women and children.",
-            image: "https://via.placeholder.com/300x400?text=Amrita+Singh", // Placeholder - replace with actual image
+            image: amritaSingh,
         },
         {
             name: "Pallavi Sinha",
             role: "Co-Founder",
             quote: "Pallavi Sinha is a dynamic and experienced woman who has dedicated her life to serving society. She is a Josephite and a computer graduate from Patna Women's College. In 2012, she founded the Nav Astitwa Foundation (NAF), that works exclusively for health and hygiene programs for women and children.",
-            image: "https://via.placeholder.com/300x400?text=Pallavi+Sinha", // Placeholder - replace with actual image
+            image: pallaviSinha,
         },
     ];
 
     const boardMembers = [
-        { name: "Ujjawal Kumar", role: "State Project Coordinator", image: "https://via.placeholder.com/200x200?text=Ujjawal+Kumar" },
-        { name: "Veena Manvi", role: "Advisory Committee", image: "https://via.placeholder.com/200x200?text=Veena+Manvi" },
-        { name: "Aman Kumar", role: "Team Member", image: "https://via.placeholder.com/200x200?text=Aman+Kumar" },
-        { name: "Ranjan Mistry", role: "Technical Team", image: "https://via.placeholder.com/200x200?text=Ranjan+Mistry" },
-        { name: "Dr. Binda Singh", role: "Advisory Committee", image: "https://via.placeholder.com/200x200?text=Dr.+Binda+Singh" },
-        { name: "Dr. Saurabh Singh", role: "Advisory Committee", image: "https://via.placeholder.com/200x200?text=Dr.+Saurabh+Singh" },
-        { name: "Gopal Kumar", role: "Team Member", image: "https://via.placeholder.com/200x200?text=Gopal+Kumar" },
-        { name: "Jyoti Kumari", role: "Field Coordinator", image: "https://via.placeholder.com/200x200?text=Jyoti+Kumari" },
-        { name: "Md. Ammanullah", role: "Technical Team", image: "https://via.placeholder.com/200x200?text=Md.+Ammanullah" },
-        { name: "Nitu Kumari", role: "Team Member", image: "https://via.placeholder.com/200x200?text=Nitu+Kumari" },
-        { name: "Shantanu Singh", role: "Advisory Committee", image: "https://via.placeholder.com/200x200?text=Shantanu+Singh" },
-        { name: "Shobha Gupta", role: "Advisory Committee", image: "https://via.placeholder.com/200x200?text=Shobha+Gupta" },
-        { name: "Shreeprakash Thakur", role: "State Technical Head", image: "https://via.placeholder.com/200x200?text=Shreeprakash+Thakur" },
+        { name: "Ujjawal Kumar", role: "State Project Coordinator", image: ujjawalKumar },
+        { name: "Veena Manvi", role: "Advisory Committee", image: veenaManvi },
+        { name: "Aman Kumar", role: "Team Member", image: amanKumar },
+        { name: "Ranjan Mistry", role: "Technical Team", image: ranjanMistry },
+        { name: "Dr. Binda Singh", role: "Advisory Committee", image: drBindaSingh },
+        { name: "Dr. Saurabh Singh", role: "Advisory Committee", image: drSaurabhSingh },
+        { name: "Gopal Kumar", role: "Team Member", image: gopalKumar },
+        { name: "Jyoti Kumari", role: "Field Coordinator", image: jyotiKumari },
+        { name: "Md. Ammanullah", role: "Technical Team", image: mdAmmanullah },
+        { name: "Nitu Kumari", role: "Team Member", image: nituKumari },
+        { name: "Shantanu Singh", role: "Advisory Committee", image: shantanuSingh },
+        { name: "Shobha Gupta", role: "Advisory Committee", image: shobhaGupta },
+        { name: "Shreeprakash Thakur", role: "State Technical Head", image: shreeprakashThakur },
     ];
 
     const fourAApproach = [
@@ -88,30 +103,30 @@ const About = () => {
                     <section className="mb-16">
                         <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg border border-pink-100">
                             <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
-                                Nav Astitva Foundation is a non-profit organization based in Bihar, India that works towards 
-                                improving the health and hygiene, education, and empowerment of women and adolescents. The organization 
-                                has a primary focus on menstrual health and hygiene, and works towards addressing the issues 
+                                Nav Astitva Foundation is a non-profit organization based in Bihar, India that works towards
+                                improving the health and hygiene, education, and empowerment of women and adolescents. The organization
+                                has a primary focus on menstrual health and hygiene, and works towards addressing the issues
                                 surrounding it in a holistic and inclusive manner.
                             </p>
                             <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
-                                The organization was founded in 2012 by two dynamic personalities, Amrita Singh and Pallavi Sinha, 
-                                and is registered under the Societies Registration Act XXI of 1860. Since its inception, Nav Astitva 
-                                Foundation has been dedicated to addressing the pressing issues of health and hygiene, education, and 
-                                empowerment through partnerships and collaborations with various government and non-government organizations 
-                                such as UNICEF, ICDS, Jeevika, Rotary Club of Bihar, Indian Red Cross Society, Bihar Government, Bharat 
+                                The organization was founded in 2012 by two dynamic personalities, Amrita Singh and Pallavi Sinha,
+                                and is registered under the Societies Registration Act XXI of 1860. Since its inception, Nav Astitva
+                                Foundation has been dedicated to addressing the pressing issues of health and hygiene, education, and
+                                empowerment through partnerships and collaborations with various government and non-government organizations
+                                such as UNICEF, ICDS, Jeevika, Rotary Club of Bihar, Indian Red Cross Society, Bihar Government, Bharat
                                 Petroleum Corporation Limited, and many others.
                             </p>
                             <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
-                                One of the major initiatives of the organization is the opening of the first Sanitary Pad Bank in Bihar. 
-                                This project aims to provide affordable and accessible sanitary pads to women and girls, particularly in 
-                                rural areas, to help them maintain their menstrual health and hygiene. Another initiative is the Hunger 
+                                One of the major initiatives of the organization is the opening of the first Sanitary Pad Bank in Bihar.
+                                This project aims to provide affordable and accessible sanitary pads to women and girls, particularly in
+                                rural areas, to help them maintain their menstrual health and hygiene. Another initiative is the Hunger
                                 Project named as Sai ki Rasoi, which aims to provide nutritious meals to underprivileged women and girls.
                             </p>
                             <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-                                Overall, Nav Astitva Foundation is a dedicated organization that is working towards addressing the pressing 
-                                issues of health and hygiene, education, and empowerment of women and adolescents in Bihar. The organization's 
-                                holistic and inclusive approach, partnerships and collaborations with various government and non-government 
-                                organizations, and its various initiatives and programs are making a significant impact in the lives of the 
+                                Overall, Nav Astitva Foundation is a dedicated organization that is working towards addressing the pressing
+                                issues of health and hygiene, education, and empowerment of women and adolescents in Bihar. The organization's
+                                holistic and inclusive approach, partnerships and collaborations with various government and non-government
+                                organizations, and its various initiatives and programs are making a significant impact in the lives of the
                                 women and girls in Bihar.
                             </p>
                         </div>
@@ -124,7 +139,7 @@ const About = () => {
                                 Vision and Mission
                             </h2>
                             <p className="text-gray-700 text-lg md:text-xl leading-relaxed text-center max-w-3xl mx-auto">
-                                The vision and mission of Nav Astitva Foundation is to uplift the lives of underprivileged individuals, 
+                                The vision and mission of Nav Astitva Foundation is to uplift the lives of underprivileged individuals,
                                 with a focus on women and girls, through education, health, empowerment, and nutritious food.
                             </p>
                         </div>
@@ -155,16 +170,16 @@ const About = () => {
                                         {/* Gradient Overlay - Light at top, dark at bottom */}
                                         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-gray-900" />
                                     </div>
-                                    
+
                                     {/* Quote Section - Dark Background */}
                                     <div className="bg-gray-800 text-white p-6">
                                         <p className="text-base md:text-lg leading-relaxed mb-4">
                                             "{founder.quote}"
                                         </p>
-                                        
+
                                         {/* Separator Line */}
                                         <div className="w-full h-px bg-white/30 mb-4" />
-                                        
+
                                         {/* Attribution */}
                                         <div>
                                             <p className="text-white font-semibold text-lg">
@@ -247,22 +262,22 @@ const About = () => {
                                     </span>
                                 </div>
                                 <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-4">
-                                    2 Ladies, stepped into the world of social service and started awaring the slum dwellers with a basic 
-                                    literacy programme, simple calculations of money and wages per day, Health & Hygiene awareness related 
+                                    2 Ladies, stepped into the world of social service and started awaring the slum dwellers with a basic
+                                    literacy programme, simple calculations of money and wages per day, Health & Hygiene awareness related
                                     to their urinals, bathing habits, cleaning surrounding to be safe & protected.
                                 </p>
                                 <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-4">
-                                    Organized Regular Health Clinics weekly for women and children to keep them healthy. Spreading quality 
-                                    time with these slum women brought us closer to a few true hidden facts and that was the plight of slum 
-                                    women during periods. A pandora box generating innumerable diseases. A bad foul stink could be noticed from 
-                                    them that was due to not taking bath during periods, reusing dirty clothes during menstruation and so many 
+                                    Organized Regular Health Clinics weekly for women and children to keep them healthy. Spreading quality
+                                    time with these slum women brought us closer to a few true hidden facts and that was the plight of slum
+                                    women during periods. A pandora box generating innumerable diseases. A bad foul stink could be noticed from
+                                    them that was due to not taking bath during periods, reusing dirty clothes during menstruation and so many
                                     wrong practices.
                                 </p>
                                 <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-                                    The journey of challenges began, when we stepped out of our home and entered theirs. 2012 completely differed 
-                                    as no PADMAN was there to broaden the mindset of people. The 2 Ladies with the aim of "Swachh Betiyan Swachh 
-                                    Samaj" went on alone with firm determination despite all mockeries, fun, scoldings & challenges. Organized 
-                                    Health Checkups, by Gynecologist for the needy & unprivileged women weekly. Provided them free medical 
+                                    The journey of challenges began, when we stepped out of our home and entered theirs. 2012 completely differed
+                                    as no PADMAN was there to broaden the mindset of people. The 2 Ladies with the aim of "Swachh Betiyan Swachh
+                                    Samaj" went on alone with firm determination despite all mockeries, fun, scoldings & challenges. Organized
+                                    Health Checkups, by Gynecologist for the needy & unprivileged women weekly. Provided them free medical
                                     treatment along with recommended medicines.
                                 </p>
                             </div>
