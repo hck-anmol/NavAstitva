@@ -10,6 +10,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAchievementsOpen, setIsAchievementsOpen] = useState(false);
   const [achievementsTimeout, setAchievementsTimeout] = useState(null);
+  const navigate = useNavigate();
 
   const navLinks = [
     { name: "Home", path: "/" },
